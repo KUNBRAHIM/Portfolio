@@ -35,7 +35,7 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
-          <a href="/" className="flex items-center gap-2 group">
+          <a href={asset("/")} className="flex items-center gap-2 group">
             <AppLogo
               size={32}
               onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
