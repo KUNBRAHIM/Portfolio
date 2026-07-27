@@ -4,6 +4,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { motion, AnimatePresence } from "framer-motion"
 import AppImage from '@/components/ui/AppImage';
 import Icon from '@/components/ui/AppIcon';
+import { asset } from '@/utils';
 
 function AnimatedCounter({ target, suffix }) {
   const [count, setCount] = useState(0);
@@ -62,15 +63,15 @@ export default function AboutSection() {
   }, [totalStatsPages]);
 
   useEffect(() => {
-    fetch('/data/education.json')
+    fetch(asset('data/education.json'))
       .then((res) => res.json())
       .then((json) => setData(json))
       .catch(() => setData({ education: [], certifications: [] }));
-    fetch('/data/profile.json')
+    fetch(asset('data/profile.json'))
       .then((res) => res.json())
       .then((json) => setProfileStats(json.stats || []))
       .catch(() => setProfileStats([]));
-    fetch('/data/about.json')
+    fetch(asset('data/about.json'))
       .then((res) => res.json())
       .then((json) => setAbout(json))
       .catch(() => setAbout(null));
@@ -123,7 +124,7 @@ export default function AboutSection() {
                 <div className="relative flex-shrink-0">
                   <div className="w-28 h-28 rounded-2xl overflow-hidden border-2 border-primary/30">
                     <AppImage
-                      src={about?.photo || "/images/personal.png"}
+                      src={asset(about?.photo || "/images/personal.png")}
                       alt={about?.photoAlt || "Profile photo"}
                       width={128}
                       height={128}

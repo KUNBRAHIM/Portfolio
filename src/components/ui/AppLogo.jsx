@@ -3,9 +3,10 @@
 import React, { memo, useMemo } from 'react';
 import AppIcon from './AppIcon';
 import AppImage from './AppImage';
+import { asset } from '@/utils';
 
 const AppLogo = memo(function AppLogo({
-  src = '/images/logo.jpg',
+  src = asset('/images/logo.jpg'),
   iconName = 'SparklesIcon',
   size = 64,
   className = '',

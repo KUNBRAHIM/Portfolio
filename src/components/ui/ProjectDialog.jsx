@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Icon from './AppIcon';
+import { asset } from '@/utils';
 
 const stagger = {
   hidden: { opacity: 0 },
@@ -135,7 +136,7 @@ export default function ProjectDialog({ project, onClose }) {
                     <AnimatePresence mode="wait">
                       <motion.img
                         key={imgIndex}
-                        src={images[imgIndex]}
+                        src={asset(images[imgIndex])}
                         alt={project.alt || project.title}
                         initial={{ opacity: 0, scale: 1.05 }}
                         animate={{ opacity: 1, scale: 1 }}

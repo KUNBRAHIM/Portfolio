@@ -3,12 +3,13 @@
 import React, { useState, useEffect } from 'react';
 import AppLogo from '@/components/ui/AppLogo';
 import Icon from '@/components/ui/AppIcon';
+import { asset } from '@/utils';
 
 export default function Navbar() {
   const [navLinks, setNavLinks] = useState([]);
 
   useEffect(() => {
-    fetch("/data/site.json")
+    fetch(asset("data/site.json"))
       .then((res) => res.json())
       .then((data) => setNavLinks(data.navLinks || []))
       .catch(() => setNavLinks([]));

@@ -1,4 +1,5 @@
 import { createContext, useContext, useState, useEffect } from "react"
+import { asset } from "@/utils"
 
 const ExperienceContext = createContext(null)
 
@@ -7,7 +8,7 @@ export const ExperienceProvider = ({ children }) => {
   const [abilities, setAbilities] = useState([])
 
   useEffect(() => {
-    fetch("/data/experience.json")
+    fetch(asset("data/experience.json"))
       .then((res) => res.json())
       .then((data) => {
         setExpCards(data.expCards || [])

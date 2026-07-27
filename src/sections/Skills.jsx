@@ -4,6 +4,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useMediaQuery } from "react-responsive"
 import Icon from '@/components/ui/AppIcon';
+import { asset } from '@/utils';
 
 const getInitials = (text = "") =>
   text
@@ -37,7 +38,7 @@ function SkillBar({ skill, index }) {
       <div className="flex items-center justify-between mb-2">
         <div className="flex items-center gap-2">
           {skill.logoPath ? (
-            <img src={skill.logoPath} alt={skill.name} className="w-5 h-5 rounded object-cover shrink-0" />
+            <img src={asset(skill.logoPath)} alt={skill.name} className="w-5 h-5 rounded object-cover shrink-0" />
           ) : (
             <div className="w-5 h-5 rounded flex items-center justify-center shrink-0 bg-primary/10 border border-primary/20">
               <span className="text-primary text-[10px] font-bold">{getInitials(skill.name)}</span>
@@ -93,7 +94,7 @@ export default function Skills() {
   const visibleTools = tools.length > 0 ? extendedTools.slice(toolStart, toolStart + toolsPerPage) : [];
 
   useEffect(() => {
-    fetch("/data/skills.json")
+    fetch(asset("data/skills.json"))
       .then((res) => res.json())
       .then((data) => {
         setSkillCategories(data.skillCategories || []);
@@ -179,7 +180,7 @@ export default function Skills() {
                       </svg>
                       {tool.logoPath ? (
                         <img
-                          src={tool.logoPath}
+                          src={asset(tool.logoPath)}
                           alt={tool.name}
                           className="relative z-10 w-10 h-10 object-contain"
                         />

@@ -2,6 +2,7 @@
 
 import React, { useEffect, useRef, useState } from 'react';
 import Icon from '@/components/ui/AppIcon';
+import { asset } from '@/utils';
 
 export default function ContactSection() {
   const sectionRef = useRef(null);
@@ -9,7 +10,7 @@ export default function ContactSection() {
   const [socialLinks, setSocialLinks] = useState([]);
 
   useEffect(() => {
-    fetch("/data/contact.json")
+    fetch(asset("data/contact.json"))
       .then((res) => res.json())
       .then((data) => setSocialLinks(data.socialLinks || []))
       .catch(() => setSocialLinks([]));
@@ -208,7 +209,7 @@ export default function ContactSection() {
                 Full CV with work history, projects, and references. Last updated July 2026.
               </p>
               <a
-                href="/files/CV.pdf"
+                href={asset("files/CV.pdf")}
                 download
                 className="inline-flex items-center gap-2 px-5 py-3 rounded-full border border-primary text-primary font-semibold text-sm hover:bg-primary hover:text-primary-foreground transition-all duration-300 w-full justify-center"
               >

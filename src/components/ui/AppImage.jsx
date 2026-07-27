@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useCallback, useMemo, memo } from 'react';
+import { asset } from '@/utils';
 
 /**
  * @typedef {Object} AppImageProps
@@ -34,7 +35,7 @@ const AppImage = memo(function AppImage({
     fill = false,
     sizes,
     onClick,
-    fallbackSrc = '/assets/images/no_image.png',
+    fallbackSrc = asset('/assets/images/no_image.png'),
     loading = 'lazy',
     unoptimized = false,
 }) {

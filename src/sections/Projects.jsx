@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from 'react';
 import Icon from '@/components/ui/AppIcon';
 import ProjectDialog from '@/components/ui/ProjectDialog';
+import { asset } from '@/utils';
 
 const statusDotColors = {
   emerald: 'bg-emerald-400',
@@ -31,7 +32,7 @@ function ProjectCard({ project, onOpenDialog }) {
     <div className="rounded-2xl border border-border/40 backdrop-blur-sm hover:border-primary/30 transition-colors duration-300 h-full flex flex-col overflow-hidden">
       <div className="relative h-48 overflow-hidden group">
         <img
-          src={project.image}
+          src={asset(project.image)}
           alt={project.alt || project.title}
           className="w-full h-full object-cover"
         />
@@ -88,7 +89,7 @@ export default function ProjectsSection() {
   const visibleProjects = projects.slice(page * perPage, page * perPage + perPage);
 
   useEffect(() => {
-    fetch("/data/projects.json")
+    fetch(asset("data/projects.json"))
       .then((res) => res.json())
       .then((data) => setProjects(data.projects || []))
       .catch(() => setProjects([]));

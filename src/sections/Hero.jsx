@@ -4,12 +4,13 @@ import { useState, useEffect } from 'react';
 import Icon from '@/components/ui/AppIcon';
 import VHSText from '@/components/ui/VHSText';
 import SphereBg from '@/components/SphereBg';
+import { asset } from '@/utils';
 
 export default function HeroSection() {
   const [profile, setProfile] = useState(null);
 
   useEffect(() => {
-    fetch("/data/profile.json")
+    fetch(asset("data/profile.json"))
       .then((res) => res.json())
       .then((data) => setProfile(data))
       .catch(() => setProfile(null));
@@ -78,7 +79,7 @@ export default function HeroSection() {
               View My Work
             </a>
             <a
-              href="/files/CV.pdf"
+              href={asset("files/CV.pdf")}
               download
               className="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-full border border-foreground/20 text-foreground font-semibold text-base hover:border-primary/50 hover:text-primary transition-all duration-300">
 

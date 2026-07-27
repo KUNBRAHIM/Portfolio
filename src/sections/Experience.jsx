@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion"
 import { Layers, Sparkles, CheckCircle2 } from "lucide-react"
 import Icon from "@/components/ui/AppIcon"
 import { useExperience } from "../context/ExperienceContext"
+import { asset } from "@/utils"
 
 const getInitials = (text = "") =>
     text
@@ -63,7 +64,7 @@ export const Experience = () => {
                 <div className="flex items-center gap-3 mb-4">
                   {card.logoPath ? (
                     <img
-                      src={card.logoPath}
+                      src={asset(card.logoPath)}
                       alt={card.title}
                       className="w-10 h-10 rounded-lg object-cover shrink-0"
                     />
