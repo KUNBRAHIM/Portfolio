@@ -1,0 +1,11 @@
+{
+  "heroTagline": "Building modern, scalable, and user-friendly digital experiences.",
+  "heroVHSText": ["HI", "I'M", "LATRECHE", "BRAHIM"],
+  "heroTechBadges": ["flutter", "laravel", "php", "mysql", "mongodb", "tensorflow", "pytorch"],
+  "stats": [
+    { "value": 6, "suffix": "+", "label": "Years of Experience", "icon": "CalendarDaysIcon" },
+    { "value": 5, "suffix": "+", "label": "Projects Shipped", "icon": "RocketLaunchIcon" },
+    { "value": null, "suffix": "k", "label": "GitHub Stars", "icon": "StarIcon" },
+    { "value": null, "suffix": "%", "label": "Client Satisfaction", "icon": "HeartIcon" }
+  ]
+}

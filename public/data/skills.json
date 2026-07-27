@@ -1,0 +1,83 @@
+{
+  "skillCategories": [
+    {
+      "title": "Frontend & Mobile",
+      "description": "Building responsive UIs and cross-platform apps",
+      "skills": [
+        { "name": "Flutter", "level": 95, "logoPath": "/images/logos/flutter_logo.svg", "color": "#02569B" },
+        { "name": "Dart", "level": 95, "logoPath": "/images/logos/dart_logo.svg", "color": "#0175C2" },
+        { "name": "React", "level": 55, "logoPath": "/images/logos/react_logo.png", "color": "#61DAFB" }
+      ]
+    },
+    {
+      "title": "Backend & Languages",
+      "description": "Server-side logic and API development",
+      "skills": [
+        { "name": "Laravel", "level": 95, "logoPath": "/images/logos/laravel_logo.png", "color": "#FF2D20" },
+        { "name": "PHP", "level": 95, "logoPath": "/images/logos/php_logo.png", "color": "#777BB4" },
+        { "name": "Python", "level": 85, "logoPath": "/images/logos/python_logo.png", "color": "#3776AB" }
+      ]
+    },
+    {
+      "title": "Databases & Tools",
+      "description": "Database systems and development utilities",
+      "skills": [
+        { "name": "MongoDB", "level": 70, "logoPath": "/images/logos/mongodb_logo.png", "color": "#47A248" },
+        { "name": "XAMPP", "level": 95, "logoPath": "/images/logos/xampp_logo.png", "color": "#FB7A24" },
+        { "name": "JSON", "level": 98, "logoPath": "/images/logos/json_logo.png", "color": "#C8965A" }
+      ]
+    },
+    {
+      "title": "UI & UX Design",
+      "description": "Design tools for crafting beautiful interfaces",
+      "skills": [
+        { "name": "Figma", "level": 75, "logoPath": "/images/logos/figma_logo.png", "color": "#F24E1E" },
+        { "name": "Canva", "level": 75, "logoPath": "/images/logos/canva_logo.png", "color": "#00C4CC" },
+        { "name": "Stitch", "level": 80, "logoPath": "/images/logos/stitch_logo.png", "color": "#C8965A" }
+      ]
+    },
+    {
+      "title": "AI Agentic & Tools",
+      "description": "AI development tools and platforms",
+      "skills": [
+        { "name": "VS Code", "level": 95, "logoPath": "/images/logos/vscode_logo.png", "color": "#007ACC" },
+        { "name": "Postman", "level": 95, "logoPath": "/images/logos/postman_logo.png", "color": "#FF6C37" },
+        { "name": "vibe coding", "level": 95, "logoPath": "/images/logos/vibecoding_logo.png", "color": "#4285F4" }
+      ]
+    },
+    {
+      "title": "Machine Learning",
+      "description": "ML/DL frameworks and tools for AI solutions",
+      "skills": [
+        { "name": "PyTorch", "level": 80, "logoPath": "/images/logos/pytorch_logo.png", "color": "#EE4C2C" },
+        { "name": "TensorFlow", "level": 80, "logoPath": "/images/logos/tensorflow_logo.png", "color": "#FF6F00" },
+        { "name": "Scikit-Learn", "level": 80, "logoPath": "/images/logos/scikitlearn_logo.png", "color": "#F7931E" }
+      ]
+    }
+  ],
+
+  "tools": [
+    { "name": "VS Code", "logoPath": "/images/logos/vscode_logo.png", "url": "https://code.visualstudio.com" },
+    { "name": "Postman", "logoPath": "/images/logos/postman_logo.png", "url": "https://postman.com" },
+    { "name": "Claude Code", "logoPath": "/images/logos/claude_code_logo.svg", "url": "https://docs.anthropic.com/en/docs/claude-code" },
+    { "name": "Gemini CLI", "logoPath": "/images/logos/gemini_logo.svg", "url": "https://cloud.google.com/gemini-cli" },
+    { "name": "Figma", "logoPath": "/images/logos/figma_logo.png", "url": "https://figma.com" },
+    { "name": "Canva", "logoPath": "/images/logos/canva_logo.png", "url": "https://canva.com" },
+    { "name": "GitHub", "logoPath": "/images/logos/github_logo.png", "url": "https://github.com" },
+    { "name": "Git", "logoPath": "/images/logos/git.svg", "url": "https://git-scm.com" },
+    { "name": "MongoDB", "logoPath": "/images/logos/mongodb_logo.png", "url": "https://mongodb.com" },
+    { "name": "XAMPP", "logoPath": "/images/logos/xampp_logo.png", "url": "https://apachefriends.org" },
+    { "name": "Stitch", "logoPath": "/images/logos/stitch_logo.png", "url": "https://stitch.com" },
+    { "name": "vibe coding", "logoPath": "/images/logos/vibecoding_logo.png", "url": "https://vibe-coding.dev" },
+    { "name": "PyTorch", "logoPath": "/images/logos/pytorch_logo.png", "url": "https://pytorch.org" },
+    { "name": "TensorFlow", "logoPath": "/images/logos/tensorflow_logo.png", "url": "https://tensorflow.org" },
+    { "name": "Scikit-Learn", "logoPath": "/images/logos/scikitlearn_logo.png", "url": "https://scikit-learn.org" },
+    { "name": "Flutter", "logoPath": "/images/logos/flutter_logo.svg", "url": "https://flutter.dev" },
+    { "name": "Dart", "logoPath": "/images/logos/dart_logo.svg", "url": "https://dart.dev" },
+    { "name": "React", "logoPath": "/images/logos/react_logo.png", "url": "https://react.dev" },
+    { "name": "Laravel", "logoPath": "/images/logos/laravel_logo.png", "url": "https://laravel.com" },
+    { "name": "PHP", "logoPath": "/images/logos/php_logo.png", "url": "https://php.net" },
+    { "name": "Python", "logoPath": "/images/logos/python_logo.png", "url": "https://python.org" },
+    { "name": "JSON", "logoPath": "/images/logos/json_logo.png", "url": "https://json.org" }
+  ]
+}
