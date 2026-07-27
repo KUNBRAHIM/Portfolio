@@ -1,0 +1,183 @@
+{
+  "projects": [
+    {
+      "id": 1,
+      "title": "Neuro Move",
+      "category": "Full-Stack Android app with AI integration",
+      "description": "NeuroMove is a application for pediatric movement screening. It guides users through onboarding, child profile setup, movement recording, scan processing, analytical results, action plans, and app settings.",
+      "role": "Full-stack developer — designed the Laravel API and built the Flutter app with deep learning integration",
+      "status": { "label": "In Progress", "color": "amber" },
+      "image": "images/projects/neuro_move.png",
+      "images": ["images/projects/neuro_move.png"],
+      "alt": "Dark dashboard interface with glowing blue data charts on black background, atmospheric studio lighting",
+      "tags": ["laravel", "flutter", "deep learning"],
+      "stack": {
+        "backend": ["Laravel", "MySQL", "PHP"],
+        "mobile": ["Flutter", "Provider", "Dio", "flutter_secure_storage"],
+        "ai/ml": ["TensorFlow", "Deep Learning", "Python"]
+      },
+      "highlights": [
+        "End-to-end pediatric movement screening — from onboarding through AI-powered analysis to actionable plans",
+        "Custom deep learning model for automated movement recording and scan processing",
+        "Role-based flows for both parents and clinicians within a single application",
+        "Child profile management with longitudinal growth tracking and personalized action plans"
+      ],
+      "accent": "#4F8EF7",
+      "span": "col-span-1 md:col-span-2",
+      "height": "h-80 md:h-96",
+      "url": "#",
+      "githubUrl": "https://github.com/",
+      "features": [
+        "Onboarding flow for parents and clinicians",
+        "Child profile management with growth tracking",
+        "AI-powered movement recording and analysis",
+        "Automated scan processing with real-time feedback",
+        "Custom action plan generation based on results"
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Hospital Management System",
+      "category": "Full-stack healthcare platform",
+      "description": "A full-stack hospital management platform built across three repositories: a Laravel REST API backend, a Flutter desktop app for admins and doctors, and a Flutter mobile app for patients. Supports patient registration, doctor discovery, appointment booking, and role-based dashboards, secured with Sanctum and JWT-based authentication.",
+      "role": "Full-stack developer — designed the Laravel API and built both the Flutter desktop and mobile clients",
+      "status": { "label": "In Progress", "color": "amber" },
+      "image": "images/projects/HMD.png",
+      "images": ["images/projects/HMD.png", "images/projects/HMM.png"],
+      "alt": "Hospital management system dashboard showing patient appointments and doctor management",
+      "tags": ["laravel", "mysql", "flutter", "dio", "provider"],
+      "stack": {
+        "backend": ["Laravel 10", "MySQL", "Laravel Sanctum", "PHP 8.1+"],
+        "desktop": ["Flutter", "Provider", "Dio", "fl_chart", "bitsdojo_window"],
+        "mobile": ["Flutter", "Provider", "Dio", "flutter_secure_storage", "shared_preferences"]
+      },
+      "highlights": [
+        "Dual-frontend architecture — one Laravel API serving a Flutter desktop app (staff) and a Flutter mobile app (patients)",
+        "Token-based authentication with Sanctum on the backend and secure JWT storage via flutter_secure_storage on mobile",
+        "Real-time doctor search/filter, animated appointment carousel, and staggered list animations on the patient dashboard",
+        "Admin dashboard with visual analytics (charts/bar graphs) for hospital-wide statistics"
+      ],
+      "features": [
+        "Patient mobile app — registration, doctor discovery, appointment booking, profile management",
+        "Admin/doctor desktop app — dashboard, appointment scheduling, patient management, analytics",
+        "Laravel REST API with Sanctum token-based authentication and MySQL database",
+        "Multi-step registration with inline validation and JWT token management",
+        "Animated dashboard with appointment carousel, status indicators, and staggered list animations"
+      ],
+      "accent": "#F7A81F",
+      "span": "col-span-1 md:col-span-2",
+      "height": "h-80 md:h-96",
+      "url": "#",
+      "githubUrl": ""
+    },
+    {
+      "id": 3,
+      "title": "Social Media",
+      "category": "Full-stack social media backend with MongoDB",
+      "description": "A social media backend built with Laravel and MongoDB, using a single-document data structure for efficient reads. Features user authentication, post creation, commenting, likes, and admin management — all stored in a single Data collection with nested arrays for users, posts, comments, and admin entities.",
+      "role": "Full-stack developer — designed the Laravel API with MongoDB single-document pattern, Sanctum auth, and Blade templating",
+      "status": { "label": "In Progress", "color": "amber" },
+      "image": "images/projects/Social_Media.png",
+      "images": ["images/projects/Social_Media.png"],
+      "alt": "Social media platform dashboard showing user management and post feed",
+      "tags": ["laravel", "mongodb", "blade", "sanctum"],
+      "stack": {
+        "backend": ["Laravel", "MongoDB", "Laravel Sanctum", "PHP"],
+        "frontend": ["Blade", "Tailwind CSS"]
+      },
+      "highlights": [
+        "Single-document MongoDB pattern — all entities stored in one collection for efficient reads",
+        "Role-based authentication with Laravel Sanctum for users and admins",
+        "Full CRUD for users, posts, comments with nested array manipulation",
+        "Blade-based admin dashboard for user and content management"
+      ],
+      "features": [
+        "User registration and authentication (admin + regular users)",
+        "Post creation, viewing, and deletion with like/comment support",
+        "Comment system nested under posts with user attribution",
+        "Admin panel for user and content management",
+        "MongoDB single-document architecture for optimized read performance"
+      ],
+      "accent": "#10B981",
+      "span": "col-span-1 md:col-span-2",
+      "height": "h-80 md:h-96",
+      "url": "#",
+      "githubUrl": ""
+    },
+    {
+      "id": 4,
+      "title": "My Store",
+      "category": "Full-stack POS & store management system",
+      "description": "A cross-platform management store application built with Flutter and Laravel, featuring a clean architecture approach. Includes a real-time dashboard, customer/invoice/product CRUD, admin role management, statistics with charts, real-time notifications, and multilingual support (English, Arabic, French) with light/dark theme toggle.",
+      "role": "Full-stack developer — built the Flutter cross-platform client and the Laravel headless backend API",
+      "status": { "label": "In Progress", "color": "amber" },
+      "image": "images/projects/MON_MAG.png",
+      "images": ["images/projects/MON_MAG.png"],
+      "alt": "Store management dashboard with analytics charts, invoices, and product stock overview",
+      "tags": ["laravel", "flutter", "pos", "sanctum", "pusher"],
+      "stack": {
+        "backend": ["Laravel 12", "MySQL", "Laravel Sanctum", "PHP 8.2+", "Pusher"],
+        "desktop": ["Flutter", "flutter_bloc", "Provider", "Dio", "bitsdojo_window"],
+        "mobile": ["Flutter", "flutter_bloc", "Provider", "Dio", "shared_preferences"]
+      },
+      "highlights": [
+        "Clean Architecture pattern (domain/data/presentation) with get_it DI and flutter_bloc state management",
+        "Real-time notifications via Pusher WebSocket broadcasting for low-stock alerts and system events",
+        "PDF invoice generation with Arabic and French RTL support using the pdf and printing packages",
+        "Multi-role admin system with invite codes, email verification, and Sanctum token authentication",
+        "Automated Google Drive backups via Spatie Backup for database and file system"
+      ],
+      "features": [
+        "Real-time dashboard with metrics, charts, recent orders, and quick actions",
+        "Customer CRUD with search, filtering, and detailed profiles",
+        "Invoice creation, payment tracking, PDF export (Arabic & French), and archiving",
+        "Product stock management with category filtering, photo management, and low-stock alerts",
+        "Admin user management with role-based access (main_admin only)",
+        "Statistics with revenue, bill counts, stock valuation, and period-based analysis",
+        "Real-time notifications with read/unread filtering",
+        "Settings with theme toggle, multilingual support, password/email changes, and invite code generation"
+      ],
+      "accent": "#8B5CF6",
+      "span": "col-span-1 md:col-span-2",
+      "height": "h-80 md:h-96",
+      "url": "#",
+      "githubUrl": ""
+    },
+    {
+      "id": 5,
+      "title": "Mzab Community",
+      "category": "Flutter desktop population registry",
+      "description": "A Windows desktop population registry and community management application built with Flutter, designed for administrative bodies in the M'zab region of Algeria. Features token-based authentication, a dashboard with animated gauges, multi-criteria search and browse, comprehensive resident forms, and interactive statistics charts.",
+      "role": "Full-stack developer — built the Flutter desktop application with Provider state management and Dio HTTP client",
+      "status": { "label": "In Progress", "color": "amber" },
+      "image": "images/projects/MS.png",
+      "images": ["images/projects/MS.png"],
+      "alt": "Mzab Community desktop application with Arabic RTL dashboard showing population statistics and animated gauges",
+      "tags": ["flutter", "provider", "dio", "desktop", "fl_chart"],
+      "stack": {
+        "desktop": ["Flutter", "Provider", "Dio", "bitsdojo_window", "fl_chart", "flutter_secure_storage", "Google Fonts"],
+        "backend": ["REST API"]
+      },
+      "highlights": [
+        "Token-based authentication with secure token persistence via flutter_secure_storage",
+        "Multi-criteria search and filtering across family, marital status, gender, profession, education, and birth date",
+        "Interactive statistics charts for births, deaths, divorces/widows, and orphans using fl_chart",
+        "Full Arabic (RTL) interface with Amiri, Lemonada, and Akshar Google Fonts typography",
+        "Dark/light mode theme switching support"
+      ],
+      "features": [
+        "Token-based login with secure token persistence",
+        "Dashboard with family counts, registered people, new additions, and animated gauges",
+        "Multi-criteria filtering (family, marital status, gender, profession, education, birth date)",
+        "Comprehensive add/edit resident form covering personal, social, and health data",
+        "Interactive charts for births, deaths, divorces/widows, and orphans",
+        "Dark / light mode theme switching"
+      ],
+      "accent": "#14B8A6",
+      "span": "col-span-1 md:col-span-2",
+      "height": "h-80 md:h-96",
+      "url": "#",
+      "githubUrl": ""
+    }
+  ]
+}

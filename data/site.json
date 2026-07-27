@@ -1,0 +1,26 @@
+{
+  "siteName": "JOKERDEV",
+  "tagline": "Building digital experiences that matter.",
+  "navLinks": [
+    { "label": "Home", "href": "#hero" },
+    { "label": "Experience", "href": "#experience" },
+    { "label": "Skills", "href": "#skills" },
+    { "label": "Projects", "href": "#projects" },
+    { "label": "About", "href": "#about" },
+    { "label": "Contact", "href": "#contact" }
+  ],
+  "socialLinks": [
+    { "label": "GitHub", "href": "https://github.com", "icon": "CodeBracketIcon" },
+    { "label": "LinkedIn", "href": "https://linkedin.com", "icon": "BriefcaseIcon" },
+    { "label": "Twitter / X", "href": "https://x.com", "icon": "ChatBubbleLeftRightIcon" }
+  ],
+  "socialImgs": [
+    { "name": "insta", "imgPath": "/images/insta.png" },
+    { "name": "fb", "imgPath": "/images/fb.png" },
+    { "name": "x", "imgPath": "/images/x.png" },
+    { "name": "linkedin", "imgPath": "/images/linkedin.png" }
+  ],
+  "footer": {
+    "copyright": "© 2026 JOKERDEV. All rights reserved."
+  }
+}

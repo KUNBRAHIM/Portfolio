@@ -1,0 +1,20 @@
+{
+  "education": [
+    {
+      "school": "Ghardaia University",
+      "degree": "Licence Computer Science",
+      "year": "from 2021 to 2024",
+      "gpa": ""
+    },
+    {
+      "school": "Ghardaia University",
+      "degree": "Master Intelligent systems for knowledge extraction",
+      "year": "from 2024 to 2026",
+      "gpa": ""
+    }
+  ],
+  "certifications": [
+    "Graduate with License, Computer Science, 2024. ",
+    "Graduate with Master, Intelligent Systems for Knowledge Extraction, 2026. "
+  ]
+}

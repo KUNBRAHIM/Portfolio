@@ -1,0 +1,25 @@
+{
+  "email": "m.commentateur@gmail.com",
+  "availability": {
+    "status": "Available for work",
+    "text": "Currently open to full-time roles and select contract engagements starting August 2026.",
+    "responseTime": "Response time: typically within 24 hours"
+  },
+  "resume": {
+    "label": "Download Resume",
+    "description": "Full CV with work history, projects, and references. Last updated July 2026.",
+    "file": "/assets/alex-rivera-resume.pdf"
+  },
+  "inquiryTypes": [
+    { "value": "fulltime", "label": "Full-time Position" },
+    { "value": "contract", "label": "Contract / Freelance" },
+    { "value": "consulting", "label": "Technical Consulting" },
+    { "value": "collab", "label": "Open Source Collaboration" },
+    { "value": "other", "label": "Other" }
+  ],
+  "socialLinks": [
+    { "label": "GitHub", "href": "https://github.com", "icon": "CodeBracketIcon" },
+    { "label": "LinkedIn", "href": "https://linkedin.com", "icon": "BriefcaseIcon" },
+    { "label": "Twitter / X", "href": "https://x.com", "icon": "ChatBubbleLeftRightIcon" }
+  ]
+}
