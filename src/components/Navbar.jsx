@@ -40,7 +40,7 @@ export default function Navbar() {
               size={32}
               onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
             />
-            <span className="font-display font-semibold text-lg tracking-tight text-foreground hidden sm:block">
+            <span className="font-display font-semibold text-lg tracking-tight text-foreground block">
               JOKER<span className="text-primary">DEV</span>
             </span>
           </a>

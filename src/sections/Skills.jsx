@@ -88,7 +88,8 @@ export default function Skills() {
   const perPage = isMobile ? 1 : 2;
   const totalPages = Math.ceil(skillCategories.length / perPage);
   const visibleCategories = skillCategories.slice(page * perPage, page * perPage + perPage);
-  const toolsPerPage = 6;
+  const toolsPerRow = isMobile ? 2 : 3;
+  const toolsPerPage = toolsPerRow * 2;
   const extendedTools = [...tools, ...tools];
   const totalSlides = tools.length;
   const visibleTools = tools.length > 0 ? extendedTools.slice(toolStart, toolStart + toolsPerPage) : [];
@@ -110,10 +111,17 @@ export default function Skills() {
     if (tools.length === 0) return;
     setToolStart(0);
     const interval = setInterval(() => {
-      setToolStart((prev) => (prev + 6) % tools.length);
+      setToolStart((prev) => (prev + toolsPerPage) % tools.length);
     }, 3000);
     return () => clearInterval(interval);
-  }, [tools.length]);
+  }, [tools.length, toolsPerPage]);
+
+  const chunkArray = (arr, size) => {
+    const result = [];
+    for (let i = 0; i < arr.length; i += size)
+      result.push(arr.slice(i, i + size));
+    return result;
+  };
 
   return (
     <section id="skills" className="relative bg-transparent text-foreground overflow-x-hidden">
@@ -124,7 +132,7 @@ export default function Skills() {
         <div className="absolute bottom-1/3 left-1/4 w-80 h-80 blob-secondary" aria-hidden="true" />
       </div>
 
-      <div className="relative z-10 pt-16 md:pt-28 pb-6 md:pb-8 px-6 md:px-12 max-w-7xl mx-auto">
+      <div className="relative z-10 pt-20 md:pt-28 pb-6 md:pb-8 px-6 md:px-12 max-w-7xl mx-auto">
         <div className="flex flex-col md:flex-row gap-8 md:gap-12 items-start">
           <div className="flex-1 min-w-0">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/30 bg-primary/10 backdrop-blur-sm text-primary text-sm font-medium mb-8">
@@ -149,47 +157,51 @@ export default function Skills() {
                   animate={{ x: 0, opacity: 1 }}
                   exit={{ x: -100, opacity: 0 }}
                   transition={{ duration: 0.5, ease: 'linear' }}
-                  className="absolute flex flex-wrap justify-center gap-x-3 gap-y-0"
+                  className="absolute flex flex-col items-center gap-y-0"
                   style={{ width: '390px', left: '50%', marginLeft: '-220px' }}
                 >
-                  {visibleTools.map((tool, i) => (
-                    <a
-                      key={tool.name}
-                      href={tool.url || '#'}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="relative w-25 h-26 flex items-center justify-center group"
-                      style={
-                        i === 3
-                          ? { marginTop: '-20px', transform: 'translateX(50px)' }
-                          : i > 3
-                          ? { marginTop: '-20px', transform: 'translateX(50px)' }
-                          : {}
-                      }
+                  {chunkArray(visibleTools, toolsPerRow).map((row, rowIdx) => (
+                    <div
+                      key={rowIdx}
+                      className={`flex justify-center gap-x-3 ${
+                        rowIdx % 2 === 1
+                          ? 'translate-x-[50px] -mt-5'
+                          : ''
+                      }`}
                     >
-                      <svg className="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 100 115">
-                        <polygon
-                          points="50 1, 99 28, 99 86, 50 114, 1 86, 1 28"
-                          fill={toolColors[tool.name] || '#C8965A'}
-                          fillOpacity="0.15"
-                          stroke={toolColors[tool.name] || '#C8965A'}
-                          strokeWidth="2"
-                          style={{ filter: `drop-shadow(0 0 6px ${toolColors[tool.name] || '#C8965A'}60)` }}
-                          className="transition-all duration-300 opacity-60 group-hover:opacity-100"
-                        />
-                      </svg>
-                      {tool.logoPath ? (
-                        <img
-                          src={asset(tool.logoPath)}
-                          alt={tool.name}
-                          className="relative z-10 w-10 h-10 object-contain"
-                        />
-                      ) : (
-                        <span className="relative z-10 text-[10px] font-medium text-foreground/80 leading-tight px-1 text-center">
-                          {tool.name}
-                        </span>
-                      )}
-                    </a>
+                      {row.map((tool) => (
+                        <a
+                          key={tool.name}
+                          href={tool.url || '#'}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="relative w-25 h-26 flex items-center justify-center group"
+                        >
+                          <svg className="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 100 115">
+                            <polygon
+                              points="50 1, 99 28, 99 86, 50 114, 1 86, 1 28"
+                              fill={toolColors[tool.name] || '#C8965A'}
+                              fillOpacity="0.15"
+                              stroke={toolColors[tool.name] || '#C8965A'}
+                              strokeWidth="2"
+                              style={{ filter: `drop-shadow(0 0 6px ${toolColors[tool.name] || '#C8965A'}60)` }}
+                              className="transition-all duration-300 opacity-60 group-hover:opacity-100"
+                            />
+                          </svg>
+                          {tool.logoPath ? (
+                            <img
+                              src={asset(tool.logoPath)}
+                              alt={tool.name}
+                               className="relative z-10 w-[30px] h-[30px] md:w-10 md:h-10 object-contain"
+                            />
+                          ) : (
+                            <span className="relative z-10 text-[10px] font-medium text-foreground/80 leading-tight px-1 text-center">
+                              {tool.name}
+                            </span>
+                          )}
+                        </a>
+                      ))}
+                    </div>
                   ))}
                 </motion.div>
               </AnimatePresence>
@@ -200,7 +212,7 @@ export default function Skills() {
 
       <div className="relative z-10 px-6 md:px-12 max-w-7xl mx-auto pb-32">
         {totalPages > 1 && (
-          <div className="flex justify-center gap-2 mb-6">
+          <div className="hidden md:flex justify-center gap-2 mb-6">
             {Array.from({ length: totalPages }, (_, i) => (
               <button
                 key={i}
@@ -211,42 +223,70 @@ export default function Skills() {
           </div>
         )}
 
-        <div className="flex items-center gap-4">
-          <button
-            onClick={() => setPage((p) => Math.max(0, p - 1))}
-            disabled={page === 0}
-            className="project-nav-btn shrink-0"
-          >
-            <Icon name="ChevronLeftIcon" size={24} variant="outline" />
-          </button>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 flex-1 min-w-0">
-            {visibleCategories.map((cat) => (
-              <div
-                key={cat.title}
-                className="rounded-2xl border border-border/40 backdrop-blur-sm p-8 hover:border-primary/30 transition-colors duration-300"
-              >
-                <div className="mb-6">
-                  <h2 className="font-display text-xl font-semibold text-foreground mb-1">{cat.title}</h2>
-                  <p className="text-sm text-muted-foreground">{cat.description}</p>
+        {skillCategories.length > 0 && (
+          <div className="block md:hidden -mx-6 px-6 overflow-x-auto scrollbar-hide">
+            <div className="flex gap-4" style={{ scrollSnapType: "x mandatory" }}>
+              {skillCategories.map((cat) => (
+                <div
+                  key={cat.title}
+                  className="w-[85vw] shrink-0"
+                  style={{ scrollSnapAlign: "start" }}
+                >
+                  <div className="rounded-2xl border border-primary/20 card-shadow backdrop-blur-sm p-6 hover:border-primary/30 transition-colors duration-300">
+                    <div className="mb-6">
+                      <h2 className="font-display text-xl font-semibold text-foreground mb-1">{cat.title}</h2>
+                      <p className="text-sm text-muted-foreground">{cat.description}</p>
+                    </div>
+                    <div className="flex flex-col gap-5">
+                      {cat.skills.map((skill, i) => (
+                        <SkillBar key={skill.name} skill={skill} index={i} />
+                      ))}
+                    </div>
+                  </div>
                 </div>
-                <div className="flex flex-col gap-5">
-                  {cat.skills.map((skill, i) => (
-                    <SkillBar key={skill.name} skill={skill} index={i} />
-                  ))}
-                </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
+        )}
 
-          <button
-            onClick={() => setPage((p) => Math.min(totalPages - 1, p + 1))}
-            disabled={page >= totalPages - 1}
-            className="project-nav-btn shrink-0"
-          >
-            <Icon name="ChevronRightIcon" size={24} variant="outline" />
-          </button>
-        </div>
+        {skillCategories.length > 0 && (
+          <div className="hidden md:flex items-center gap-4">
+            <button
+              onClick={() => setPage((p) => Math.max(0, p - 1))}
+              disabled={page === 0}
+              className="project-nav-btn shrink-0"
+            >
+              <Icon name="ChevronLeftIcon" size={24} variant="outline" />
+            </button>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 flex-1 min-w-0">
+              {visibleCategories.map((cat) => (
+                <div
+                  key={cat.title}
+                  className="rounded-2xl border border-primary/20 card-shadow backdrop-blur-sm p-8 hover:border-primary/30 transition-colors duration-300"
+                >
+                  <div className="mb-6">
+                    <h2 className="font-display text-xl font-semibold text-foreground mb-1">{cat.title}</h2>
+                    <p className="text-sm text-muted-foreground">{cat.description}</p>
+                  </div>
+                  <div className="flex flex-col gap-5">
+                    {cat.skills.map((skill, i) => (
+                      <SkillBar key={skill.name} skill={skill} index={i} />
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <button
+              onClick={() => setPage((p) => Math.min(totalPages - 1, p + 1))}
+              disabled={page >= totalPages - 1}
+              className="project-nav-btn shrink-0"
+            >
+              <Icon name="ChevronRightIcon" size={24} variant="outline" />
+            </button>
+          </div>
+        )}
       </div>
 
     </section>

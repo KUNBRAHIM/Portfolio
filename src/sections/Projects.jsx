@@ -29,7 +29,7 @@ function StatusDot({ status }) {
 
 function ProjectCard({ project, onOpenDialog }) {
   return (
-    <div className="rounded-2xl border border-border/40 backdrop-blur-sm hover:border-primary/30 transition-colors duration-300 h-full flex flex-col overflow-hidden">
+    <div className="rounded-2xl border border-primary/20 card-shadow backdrop-blur-sm hover:border-primary/30 transition-colors duration-300 h-full flex flex-col overflow-hidden">
       <div className="relative h-48 overflow-hidden group">
         <img
           src={asset(project.image)}

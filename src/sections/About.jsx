@@ -119,7 +119,7 @@ export default function AboutSection() {
                 {about?.headerSubtitle || "A full-stack software developer passionate about building high-performance, scalable intelligent systems."}          </p>
             </div>
 
-            <div className="rounded-2xl border border-border/40 backdrop-blur-sm p-8 hover:border-primary/30 transition-colors duration-300 reveal-left">
+            <div className="rounded-2xl border border-primary/20 card-shadow backdrop-blur-sm p-8 hover:border-primary/30 transition-colors duration-300 reveal-left">
               <div className="flex flex-col sm:flex-row gap-6 items-start">
                 <div className="relative flex-shrink-0">
                   <div className="w-28 h-28 rounded-2xl overflow-hidden border-2 border-primary/30">
@@ -152,7 +152,7 @@ export default function AboutSection() {
 
           {/* Right column: Education + Certifications */}
           <div className="flex flex-col gap-6">
-            <div className="rounded-2xl border border-border/40 backdrop-blur-sm p-8 hover:border-primary/30 transition-colors duration-300">
+            <div className="rounded-2xl border border-primary/20 card-shadow backdrop-blur-sm p-8 hover:border-primary/30 transition-colors duration-300">
               <h3 className="font-display text-base font-semibold text-foreground mb-4">
                 Education
               </h3>
@@ -172,7 +172,7 @@ export default function AboutSection() {
               </div>
             </div>
 
-            <div className="rounded-2xl border border-border/40 backdrop-blur-sm p-8 hover:border-primary/30 transition-colors duration-300">
+            <div className="rounded-2xl border border-primary/20 card-shadow backdrop-blur-sm p-8 hover:border-primary/30 transition-colors duration-300">
               <h3 className="font-display text-base font-semibold text-foreground mb-4">
                 Certifications
               </h3>
@@ -198,7 +198,7 @@ export default function AboutSection() {
                 {visibleStats.map((stat) => (
                   <div
                     key={stat.label}
-                    className="flex flex-col items-center text-center p-4 rounded-xl border border-border/40"
+                    className="flex flex-col items-center text-center p-4 rounded-xl border border-primary/20 card-shadow"
                   >
                     <div className="w-10 h-10 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center mb-3">
                       <Icon name={stat.icon} size={18} variant="outline" className="text-primary" />

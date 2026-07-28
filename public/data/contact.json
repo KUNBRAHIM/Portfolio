@@ -18,8 +18,7 @@
     { "value": "other", "label": "Other" }
   ],
   "socialLinks": [
-    { "label": "GitHub", "href": "https://github.com", "icon": "CodeBracketIcon" },
-    { "label": "LinkedIn", "href": "https://linkedin.com", "icon": "BriefcaseIcon" },
-    { "label": "Twitter / X", "href": "https://x.com", "icon": "ChatBubbleLeftRightIcon" }
+    { "label": "GitHub", "href": "https://github.com/KUNBRAHIM", "icon": "CodeBracketIcon" },
+    { "label": "LinkedIn", "href": "https://www.linkedin.com/in/latreche-brahim-672a9a309", "icon": "BriefcaseIcon" }
   ]
 }

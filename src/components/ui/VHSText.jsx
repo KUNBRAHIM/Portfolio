@@ -39,7 +39,7 @@ function rgbText(lineIdx, char, charIdx, color) {
 
   const baseline = 20 + lineIdx * LINE_GAP + FONT_SIZE * 0.8;
   return (
-      <text key={`t-${lineIdx}-${color}-${charIdx}`} x={x} y={baseline} fill={fillMap[color]} font-size={FONT_SIZE} font-family="Fraunces, serif" font-weight="700" text-anchor="middle" opacity="0">
+      <text key={`t-${lineIdx}-${color}-${charIdx}`} x={x} y={baseline} fill={fillMap[color]} fontSize={FONT_SIZE} fontFamily="Fraunces, serif" fontWeight="700" textAnchor="middle" opacity="0">
       {char}
       <animate attributeName="opacity" values={attrs.opacity.values} dur={attrs.opacity.dur} begin={attrs.opacity.begin} repeatCount={attrs.opacity.fill ? undefined : 'indefinite'} fill={attrs.opacity.fill || undefined} />
       <animate attributeName="dx" values={attrs.dx.values} dur={attrs.dx.dur} begin={attrs.dx.begin} repeatCount="indefinite" />
@@ -56,7 +56,7 @@ function AnimatedContent({ lines }) {
       {lines.map((line, li) =>
         line.split('').map((c, ci) => burstRect(li, c, ci))
       )}
-      <g font-size={FONT_SIZE} font-family="Fraunces, serif" font-weight="700" text-anchor="middle" filter="url(#wobble)">
+      <g fontSize={FONT_SIZE} fontFamily="Fraunces, serif" fontWeight="700" textAnchor="middle" filter="url(#wobble)">
         {['red', 'green', 'cyan'].map((color) =>
           lines.map((line, li) =>
             line.split('').map((c, ci) => rgbText(li, c, ci, color))

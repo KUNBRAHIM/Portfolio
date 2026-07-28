@@ -42,70 +42,119 @@ export const Experience = () => {
           Applying technical expertise to deliver reliable and efficient applications.
         </p>
 
-        <div className="flex items-center gap-4">
-          <button
-            onClick={() => setActiveIndex((p) => Math.max(0, p - 1))}
-            disabled={activeIndex === 0}
-            className="project-nav-btn flex-shrink-0"
-          >
-            <Icon name="ChevronLeftIcon" size={24} variant="outline" />
-          </button>
-
-          <AnimatePresence mode="wait">
-            {card && (
-              <motion.div
-                key={activeIndex}
-                initial={{ opacity: 0, y: 16 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -16 }}
-                transition={{ duration: 0.3, ease: "easeOut" }}
-                className="rounded-2xl border border-border/40 backdrop-blur-sm p-6 flex flex-col flex-1 min-w-0"
-              >
-                <div className="flex items-center gap-3 mb-4">
-                  {card.logoPath ? (
-                    <img
-                      src={asset(card.logoPath)}
-                      alt={card.title}
-                      className="w-10 h-10 rounded-lg object-cover shrink-0"
-                    />
-                  ) : (
-                    <div className="w-10 h-10 rounded-lg flex items-center justify-center shrink-0 bg-primary/10 border border-primary/20">
-                      <span className="text-primary text-sm font-bold">
-                        {getInitials(card.title)}
-                      </span>
+        {expCards.length > 0 && (
+          <div className="block md:hidden -mx-6 px-6 overflow-x-auto scrollbar-hide">
+            <div className="flex gap-4" style={{ scrollSnapType: "x mandatory" }}>
+              {expCards.map((c, i) => (
+                <div
+                  key={i}
+                  className="w-[85vw] shrink-0"
+                  style={{ scrollSnapAlign: "start" }}
+                >
+                  <div className="rounded-2xl border border-primary/20 card-shadow backdrop-blur-sm p-4 flex flex-col">
+                    <div className="flex items-center gap-3 mb-4">
+                      {c.logoPath ? (
+                        <img
+                          src={asset(c.logoPath)}
+                          alt={c.title}
+                          className="w-10 h-10 rounded-lg object-cover shrink-0"
+                        />
+                      ) : (
+                        <div className="w-10 h-10 rounded-lg flex items-center justify-center shrink-0 bg-primary/10 border border-primary/20">
+                          <span className="text-primary text-sm font-bold">
+                            {getInitials(c.title)}
+                          </span>
+                        </div>
+                      )}
+                      <div className="min-w-0">
+                        <h3 className="text-base font-bold text-foreground">{c.title}</h3>
+                        <p className="text-xs text-muted-foreground">{c.date}</p>
+                      </div>
                     </div>
-                  )}
-                  <div className="min-w-0">
-                    <h3 className="text-base font-bold text-foreground">{card.title}</h3>
-                    <p className="text-xs text-muted-foreground">{card.date}</p>
+
+                    {c.responsibilities?.length > 0 && (
+                      <ul className="flex flex-col gap-2">
+                        {c.responsibilities.map((point, j) => (
+                          <li key={j} className="flex items-start gap-2.5 text-sm text-muted-foreground leading-relaxed">
+                            <span className="mt-2 w-1.5 h-1.5 rounded-full bg-primary shrink-0" />
+                            {point}
+                          </li>
+                        ))}
+                      </ul>
+                    )}
                   </div>
                 </div>
+              ))}
+            </div>
+          </div>
+        )}
 
-                {card.responsibilities?.length > 0 && (
-                  <ul className="flex flex-col gap-2">
-                    {card.responsibilities.map((point, i) => (
-                      <li key={i} className="flex items-start gap-2.5 text-sm text-muted-foreground leading-relaxed">
-                        <span className="mt-2 w-1.5 h-1.5 rounded-full bg-primary shrink-0" />
-                        {point}
-                      </li>
-                    ))}
-                  </ul>
-                )}
-              </motion.div>
-            )}
-          </AnimatePresence>
+        {expCards.length > 0 && (
+          <div className="hidden md:flex items-center gap-4">
+            <button
+              onClick={() => setActiveIndex((p) => Math.max(0, p - 1))}
+              disabled={activeIndex === 0}
+              className="project-nav-btn shrink-0"
+            >
+              <Icon name="ChevronLeftIcon" size={24} variant="outline" />
+            </button>
 
-          <button
-            onClick={() => setActiveIndex((p) => Math.min(expCards.length - 1, p + 1))}
-            disabled={activeIndex >= expCards.length - 1}
-            className="project-nav-btn flex-shrink-0"
-          >
-            <Icon name="ChevronRightIcon" size={24} variant="outline" />
-          </button>
-        </div>
+            <AnimatePresence mode="wait">
+              {card && (
+                <motion.div
+                  key={activeIndex}
+                  initial={{ opacity: 0, y: 16 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -16 }}
+                  transition={{ duration: 0.3, ease: "easeOut" }}
+                  className="rounded-2xl border border-primary/20 card-shadow backdrop-blur-sm p-6 flex flex-col flex-1 min-w-0"
+                >
+                  <div className="flex items-center gap-3 mb-4">
+                    {card.logoPath ? (
+                      <img
+                        src={asset(card.logoPath)}
+                        alt={card.title}
+                        className="w-10 h-10 rounded-lg object-cover shrink-0"
+                      />
+                    ) : (
+                      <div className="w-10 h-10 rounded-lg flex items-center justify-center shrink-0 bg-primary/10 border border-primary/20">
+                        <span className="text-primary text-sm font-bold">
+                          {getInitials(card.title)}
+                        </span>
+                      </div>
+                    )}
+                    <div className="min-w-0">
+                      <h3 className="text-base font-bold text-foreground">{card.title}</h3>
+                      <p className="text-xs text-muted-foreground">{card.date}</p>
+                    </div>
+                  </div>
+
+                  {card.responsibilities?.length > 0 && (
+                    <ul className="flex flex-col gap-2">
+                      {card.responsibilities.map((point, i) => (
+                        <li key={i} className="flex items-start gap-2.5 text-sm text-muted-foreground leading-relaxed">
+                          <span className="mt-2 w-1.5 h-1.5 rounded-full bg-primary shrink-0" />
+                          {point}
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </motion.div>
+              )}
+            </AnimatePresence>
+
+            <button
+              onClick={() => setActiveIndex((p) => Math.min(expCards.length - 1, p + 1))}
+              disabled={activeIndex >= expCards.length - 1}
+              className="project-nav-btn shrink-0"
+            >
+              <Icon name="ChevronRightIcon" size={24} variant="outline" />
+            </button>
+          </div>
+        )}
 
         {expCards.length > 1 && (
-          <div className="flex justify-center gap-2 mt-6">
+          <div className="hidden md:flex justify-center gap-2 mt-6">
             {expCards.map((_, i) => (
               <button
                 key={i}
@@ -118,7 +167,31 @@ export const Experience = () => {
 
         {abilityList.length > 0 && (
           <div className="mt-12">
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+            <div className="block sm:hidden -mx-6 px-6 overflow-x-auto scrollbar-hide">
+              <div className="flex gap-4" style={{ scrollSnapType: "x mandatory" }}>
+                {abilityList.map((item, i) => {
+                  const LucideIcon = [Layers, Sparkles, CheckCircle2][i % 3]
+                  return (
+                    <div
+                      key={i}
+                      className="w-[85vw] shrink-0 group perspective-[1000px] h-[130px]"
+                      style={{ scrollSnapAlign: "start" }}
+                    >
+                      <div className="relative w-full h-full transform-3d transition-transform duration-500 group-hover:transform-[rotateY(180deg)]">
+                        <div className="absolute inset-0 rounded-2xl border border-primary/20 card-shadow backdrop-blur-sm p-4 backface-hidden flex flex-col items-center justify-center text-center">
+                          <LucideIcon className="text-primary mb-2" size={18} />
+                          <h4 className="text-foreground font-semibold text-xs">{item.title}</h4>
+                        </div>
+                        <div className="absolute inset-0 rounded-2xl border border-primary/20 card-shadow backdrop-blur-sm p-4 backface-hidden transform-[rotateY(180deg)] flex items-center justify-center text-center">
+                          <p className="text-muted-foreground text-xs leading-relaxed">{item.desc}</p>
+                        </div>
+                      </div>
+                    </div>
+                  )
+                })}
+              </div>
+            </div>
+            <div className="hidden sm:grid grid-cols-3 gap-6">
               {abilityList.map((item, i) => {
                 const LucideIcon = [Layers, Sparkles, CheckCircle2][i % 3]
                 return (
@@ -127,11 +200,11 @@ export const Experience = () => {
                     className="group perspective-[1000px] h-[130px]"
                   >
                     <div className="relative w-full h-full [transform-style:preserve-3d] transition-transform duration-500 group-hover:[transform:rotateY(180deg)]">
-                      <div className="absolute inset-0 rounded-2xl border border-border/40 backdrop-blur-sm p-4 [backface-visibility:hidden] flex flex-col items-center justify-center text-center">
+                      <div className="absolute inset-0 rounded-2xl border border-primary/20 card-shadow backdrop-blur-sm p-4 [backface-visibility:hidden] flex flex-col items-center justify-center text-center">
                         <LucideIcon className="text-primary mb-2" size={18} />
                         <h4 className="text-foreground font-semibold text-xs">{item.title}</h4>
                       </div>
-                      <div className="absolute inset-0 rounded-2xl border border-border/40 backdrop-blur-sm p-4 [backface-visibility:hidden] [transform:rotateY(180deg)] flex items-center justify-center text-center">
+                      <div className="absolute inset-0 rounded-2xl border border-primary/20 card-shadow backdrop-blur-sm p-4 [backface-visibility:hidden] [transform:rotateY(180deg)] flex items-center justify-center text-center">
                         <p className="text-muted-foreground text-xs leading-relaxed">{item.desc}</p>
                       </div>
                     </div>

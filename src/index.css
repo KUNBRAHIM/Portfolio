@@ -108,6 +108,10 @@
     transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
   }
 
+  .card-shadow {
+    box-shadow: 0 4px 24px rgba(200, 150, 90, 0.08);
+  }
+
   .card-glass-hover:hover {
     border-color: rgba(200, 150, 90, 0.35);
     box-shadow: 0 20px 60px rgba(200, 150, 90, 0.08), 0 0 0 1px rgba(200, 150, 90, 0.1);
@@ -136,7 +140,7 @@
 
   @media (max-width: 768px) {
     .section-pad {
-      padding-top: 4rem;
+      padding-top: 5rem;
       padding-bottom: 4rem;
     }
   }

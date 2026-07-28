@@ -189,7 +189,7 @@ export default function ContactSection() {
           {/* Right: Info panel (2/5) */}
           <div className="lg:col-span-2 reveal-right flex flex-col gap-6">
             {/* Availability card */}
-            <div className="p-6 rounded-2xl border border-border/40 backdrop-blur-sm hover:border-primary/30 transition-colors duration-300">
+            <div className="p-6 rounded-2xl border border-primary/20 card-shadow backdrop-blur-sm hover:border-primary/30 transition-colors duration-300">
               <div className="flex items-center gap-2 mb-4">
                 <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
                 <span className="text-sm font-semibold text-green-400">Available for work</span>
@@ -219,7 +219,7 @@ export default function ContactSection() {
             </div>
 
             {/* Social links */}
-            <div className="p-6 rounded-2xl border border-border/40 backdrop-blur-sm hover:border-primary/30 transition-colors duration-300">
+            <div className="p-6 rounded-2xl border border-primary/20 card-shadow backdrop-blur-sm hover:border-primary/30 transition-colors duration-300">
               <h3 className="font-display text-base font-semibold text-foreground mb-4">
                 Find Me Online
               </h3>
@@ -243,7 +243,7 @@ export default function ContactSection() {
             </div>
 
             {/* Direct email */}
-            <div className="flex items-center gap-3 p-4 rounded-xl border border-border/40 backdrop-blur-sm">
+            <div className="flex items-center gap-3 p-4 rounded-xl border border-primary/20 card-shadow backdrop-blur-sm">
               <Icon name="EnvelopeIcon" size={18} variant="outline" className="text-primary shrink-0" />
               <a
                 href="mailto:m.commentateur@gmail.com"
