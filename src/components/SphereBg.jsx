@@ -27,7 +27,7 @@ export default function SphereBg({ opacity = 0.45, radiusRatio = 0.28 }) {
     resize();
     window.addEventListener('resize', resize);
 
-    const POINTS = 180;
+    const POINTS = 220;
     const spherePoints = [];
     for (let i = 0; i < POINTS; i++) {
       const theta = Math.acos(1 - 2 * i / POINTS);

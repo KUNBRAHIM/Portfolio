@@ -10,12 +10,12 @@ gsap.registerPlugin(ScrollTrigger)
 const SECTION_IDS = ['#hero', '#experience', '#skills', '#projects', '#about', '#contact']
 
 const SECTION_STATES = [
-  { scale: 1, x: 0, y: 0 },
-  { scale: 1, x: 20, y: 0 },
-  { scale: 1, x: 20, y: 0 },
-  { scale: 1, x: 20, y: 0 },
-  { scale: 1, x: 20, y: 0 },
-  { scale: 1, x: 0, y: 0 },
+  { scale: 1.3, x: 0, y: 0 },
+  { scale: 1.45, x: 0, y: -4 },
+  { scale: 1.6, x: 0, y: -8 },
+  { scale: 1.75, x: 0, y: -2 },
+  { scale: 1.55, x: 0, y: 4 },
+  { scale: 1.3, x: 0, y: 10 },
 ]
 
 export default function MovingSphere({ side = 'right' }) {
@@ -41,12 +41,20 @@ export default function MovingSphere({ side = 'right' }) {
     const totalScroll = document.documentElement.scrollHeight - window.innerHeight
     const milestones = sections.map(el => el.offsetTop)
     const lastEnd = milestones[milestones.length - 1] + sections[sections.length - 1].offsetHeight
-    const durations = milestones.map((top, i) => {
+
+    const rawDurations = milestones.map((top, i) => {
       if (i === 0) return 0
       const start = milestones[i - 1]
       const end = i < milestones.length - 1 ? milestones[i] : lastEnd
       return (end - start) / totalScroll
     })
+
+    const maxDur = Math.max(...rawDurations)
+    const minDur = Math.min(...rawDurations.filter(d => d > 0))
+    const durations = rawDurations.map((d, i) =>
+      i === 0 ? 0 : (d - minDur) / (maxDur - minDur) * (0.3 - 0.08) + 0.08
+    )
+    durations[durations.length - 1] = 0.38
 
     const ctx = gsap.context(() => {
       const tl = gsap.timeline({

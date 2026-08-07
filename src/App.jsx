@@ -14,7 +14,6 @@ const App = () => {
     <ExperienceProvider>
       <Navbar />
       <MovingSphere />
-      <MovingSphere side="left" />
       <HeroSection />
       <Experience />
       <Skills />

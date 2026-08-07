@@ -51,8 +51,8 @@ export const Experience = () => {
                   className="w-[85vw] shrink-0"
                   style={{ scrollSnapAlign: "start" }}
                 >
-                  <div className="rounded-2xl border border-primary/20 card-shadow backdrop-blur-sm p-4 flex flex-col">
-                    <div className="flex items-center gap-3 mb-4">
+                  <div className="rounded-2xl border border-primary/20 card-shadow backdrop-blur-sm p-4 flex flex-col h-[320px] min-h-0">
+                    <div className="flex items-center gap-3 mb-4 shrink-0">
                       {c.logoPath ? (
                         <img
                           src={asset(c.logoPath)}
@@ -73,7 +73,7 @@ export const Experience = () => {
                     </div>
 
                     {c.responsibilities?.length > 0 && (
-                      <ul className="flex flex-col gap-2">
+                      <ul className="flex flex-col gap-2 min-h-0 flex-1 overflow-y-auto pr-1 experience-scroll">
                         {c.responsibilities.map((point, j) => (
                           <li key={j} className="flex items-start gap-2.5 text-sm text-muted-foreground leading-relaxed">
                             <span className="mt-2 w-1.5 h-1.5 rounded-full bg-primary shrink-0" />
